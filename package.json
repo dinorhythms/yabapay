@@ -1,0 +1,26 @@
+{
+  "name": "yabapay-backend",
+  "version": "1.0.0",
+  "description": "The platform allows user make online payment of utility bills and recharge airtime/data and ticket with ease.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 functions/test/** --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dinorhythms/yabapay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dinorhythms/yabapay/issues"
+  },
+  "homepage": "https://github.com/dinorhythms/yabapay#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0"
+  }
+}
