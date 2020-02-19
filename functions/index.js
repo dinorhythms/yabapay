@@ -8,7 +8,7 @@ const cors = require('cors');
 const routes = require('./routes');
 const swaggerDoc = require('./config/swaggerDoc')
 const messages = require('./utils/messages');
-const response = require('./utils/response');
+const { successResponse, errorResponse } = require('./utils/response');
 
 const { https } = functions;
 
@@ -28,15 +28,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(trimmer);
 
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Yabapay.com Backend');
-})
+app.get('/', (req, res) => successResponse(res, 200, 'success', { message: messages.welcome }))
 
 app.use('/v1', router, swaggerUi.serve);
 
 // Handle routes not found
-app.use('*', (req, res) => response.errorResponse(res, 404, 'error', {
-  message: 'Not found',
+app.use('*', (req, res) => errorResponse(res, 404, 'error', {
+  message: messages.notFound,
 }));
 
 exports.api = https.onRequest(app);

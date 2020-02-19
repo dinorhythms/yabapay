@@ -1,6 +1,6 @@
 const messages = {
-  welcome: 'Welcome to YabaPay.com',
-  apiV1Welcome: 'Welcome to YabaPay.com api root',
+  welcome: 'Welcome to Yabapay.com Backend',
+  apiV1Welcome: 'Welcome to YabaPay.com API Root',
   notFound: 'Sorry, we cannot find this endpoint',
 };
 
