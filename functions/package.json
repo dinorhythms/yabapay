@@ -8,7 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "mocha"
+    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 test/** --exit"
   },
   "engines": {
     "node": "10"
@@ -28,9 +28,13 @@
     "trim-request-body": "^1.0.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^5.12.0",
     "eslint-plugin-promise": "^4.0.1",
-    "firebase-functions-test": "^0.1.6"
+    "firebase-functions-test": "^0.1.6",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0"
   },
   "private": true
 }

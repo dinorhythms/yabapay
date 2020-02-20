@@ -1,0 +1,19 @@
+env:
+  - FUNCTION_DIR=functions
+
+sudo: false
+
+language: node_js
+
+node_js:
+  - "node"
+
+before_install:
+  - cd $FUNCTION_DIR
+
+install:
+  # install deps
+  - npm install 
+
+script:
+  - npm test
