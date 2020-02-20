@@ -4,3 +4,5 @@ The platform allows user make online payment of utility bills and recharge airti
 [![Build Status](https://travis-ci.com/dinorhythms/yabapay.svg?token=FqpbnvMpwdHDorGzHypm&branch=develop)](https://travis-ci.com/dinorhythms/yabapay)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b57ba9d53e342fb25701/maintainability)](https://codeclimate.com/github/dinorhythms/yabapay/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b57ba9d53e342fb25701/test_coverage)](https://codeclimate.com/github/dinorhythms/yabapay/test_coverage)
+[![Coverage Status](https://coveralls.io/repos/github/dinorhythms/yabapay/badge.svg?branch=develop)](https://coveralls.io/github/dinorhythms/yabapay?branch=develop)
+
