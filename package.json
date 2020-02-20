@@ -4,7 +4,7 @@
   "description": "The platform allows user make online payment of utility bills and recharge airtime/data and ticket with ease.",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 functions/test/** --exit"
+    "test": "cd functions && npm test"
   },
   "repository": {
     "type": "git",
