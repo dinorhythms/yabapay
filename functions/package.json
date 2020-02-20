@@ -9,7 +9,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 test/** --exit",
-    "coverage": "nyc report --reporter=text-lcov"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "engines": {
     "node": "10"
@@ -31,6 +31,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.0.9",
     "eslint": "^5.12.0",
     "eslint-plugin-promise": "^4.0.1",
     "firebase-functions-test": "^0.1.6",
