@@ -31,9 +31,9 @@ const successResponse = (res, status, statusMessage, data) => res.status(status)
  *
  *    response(res, 404, 'error', { message: 'not found'})
 */
-const errorResponse = (res, status, statusMessage, errors) => res.status(status).json({
+const errorResponse = (res, status, statusMessage, error) => res.status(status).json({
   status: statusMessage,
-  errors,
+  error,
 });
 
 module.exports = { successResponse, errorResponse };

@@ -2,33 +2,24 @@ env:
   global:
     - CC_TEST_REPORTER_ID=4584f9662df7732b01b31ef648e2924f7516c31fbd182b8609d23d69016bb2a2
     - FUNCTION_DIR=functions
-
-sudo: false
-
+sudo: required
 language: node_js
-
 node_js:
-  - "node"
-
-before_install:
-  - cd $FUNCTION_DIR
-
+  - node
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
+  - "./cc-test-reporter before-build"
 install:
-  # install deps
-  - npm install 
-
+  - npm install
 script:
   - npm test
-
 after_success:
   - npm run coverage
   - npm install codeclimate-test-reporter
   - codeclimate-test-reporter < coverage/lcov.info
-
 after_script:
-  - ./cc-test-reporter upload-coverage; fi --exit-code $TRAVIS_TEST_RESULT
+  - "./cc-test-reporter upload-coverage; fi --exit-code $TRAVIS_TEST_RESULT"
+before_install:
+  - cd $FUNCTION_DIR
