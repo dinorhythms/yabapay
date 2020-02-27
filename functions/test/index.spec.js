@@ -1,8 +1,16 @@
 const config = require('./config');
 
-const { api, expect, chai, messages } = config;
+const { expect, chai, messages, test, api } = config;
 
 describe('Index.js', () => {
+  
+	before(() => {
+		
+  });
+
+	after(() => {
+    test.cleanup();
+  });
   
   it('Should load index successfully', (done) => {
     chai.request(api).get('/').end((_, res) => {
@@ -28,8 +36,8 @@ describe('Index.js', () => {
     chai.request(api).get('/api/v1/home').end((_, res) => {
         expect(res.status).to.be.equal(404);
         expect(res.body.status).to.be.equal('error');
-        expect(res.body.errors).to.be.an('object');
-        expect(res.body.errors.message).to.be.equal(messages.notFound);
+        expect(res.body.error).to.be.an('object');
+        expect(res.body.error.message).to.be.equal(messages.notFound);
         done();
       });
   });
